@@ -1,0 +1,10 @@
+<view class='activity_img' wx:for="{},{},{}">
+  <image src='http://bxgjyw.cn/bxght/app/37/18508c3039bd5842dca3d944faab91447818/UploadFiles/0/201707/01/1498901463.jpg'></image>
+  <view class="activity_title">
+    <text>标题标题。。。。。。</text>
+  </view>
+  <view class='activity_text'>
+    <text>作者：李锋</text>
+    <text>阅读量：0</text>
+  </view>
+</view>

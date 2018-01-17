@@ -1,0 +1,12 @@
+<view class='details'>
+  <view class='details_big' wx:for="{{content}}">
+    <view>
+     <image src="{{item.cover}}" bindtap="typeContentDetail" data-id="{{item.id}}"></image>
+    </view>
+    <view class='details_content'>{{item.title}}</view>
+    <view class='details_text'>
+      <view>作者：{{item.author}}</view>
+      <view>阅读量：{{item.click}}</view>
+    </view>
+  </view>
+</view>

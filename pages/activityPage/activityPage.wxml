@@ -1,0 +1,10 @@
+<view class='activity_img' wx:for="{{content}}">
+  <image src="{{item.cover}}" bindtap="typeContentDetail" data-id="{{item.id}}"></image>
+  <view class="activity_title">
+    <text>{{item.title}}</text>
+  </view>
+  <view class='activity_text'>
+    <text>作者：{{item.author}}</text>
+    <text>阅读量：{{item.click}}</text>
+  </view>
+</view>

@@ -1,0 +1,109 @@
+<view class='index_location'>
+  <view class='location_img'>
+    <image src='../../images/06.png'></image>
+    <text>{{address}}</text>
+  </view>
+  <view class='index_input' bindtap="suo">
+    <icon type='search' size='15'></icon>
+    <text>搜索您喜欢</text>
+  </view>
+</view>
+<swiper indicator-dots="{{indicatorDots}}"
+autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item style="width:100%;height:100%;">
+      <image src="{{item.photo}}" class="slide_image" />
+    </swiper-item>
+  </block>
+</swiper>
+<!--分类  -->
+<view class='classify'>
+  <view class='classify_big' bindtap="synopsis" data-name="zhinan">
+    <view class='classify_img'>
+      <image src='../../images/15.png'></image>
+    </view>
+    <view class='classify_text'>入托指南</view>
+  </view>
+  <view class='classify_big' bindtap="qinzihuodong">
+    <view class='classify_img'>
+      <image src='../../images/005.jpg'></image>
+    </view>
+    <view class='classify_text'>亲子活动</view>
+  </view>
+  <view class='classify_big' bindtap="xueshengzuoping">
+    <view class='classify_img'>
+      <image src='../../images/001.jpg'></image>
+    </view>
+    <view class='classify_text'>往期照片</view>
+  </view>
+  <view class='classify_big' bindtap="parentketang">
+    <view class='classify_img'>
+      <image src='../../images/004.jpeg'></image>
+    </view>
+    <view class='classify_text'>父母课堂</view>
+  </view>
+  <view class='classify_big' bindtap="synopsis" data-name="about">
+    <view class='classify_img'>
+      <image src='../../images/002.jpg'></image>
+    </view>
+    <view class='classify_text'>关于我们</view>
+  </view>
+</view>
+<!--最新信息  -->
+<view class='new_message'>
+  <view class='message_img'>
+    <image src="{{gonggaoimg}}"></image>
+  </view>
+  <view class='message_right'>
+    <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" class='lunpo' duration="{{duration}}" vertical="{{vertical}}">
+      <block  wx:for="{{gonggao_list}}" wx:key="{{index}}" >
+        <swiper-item>
+          <view class='message_big' wx:for="{{item}}" wx:for-item="i">
+            <view class='message_left' wx:if="{{i.new == 1}}">
+              <text>最新</text>
+            </view>
+
+            <view class='temp' wx:else>
+              <text>公告</text>
+            </view>
+            <view class='message_text' bindtap="synopsis" data-name="gonggao" data-id="{{i.id}}">
+              <text>{{i.uname}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    
+  </view>
+</view>
+<!--推荐课程  -->
+<view class='recommend'>
+  <view class='recommend_border'></view>
+  <view class='recommend_title'>推荐课程</view>
+</view>
+<!--推荐课程 -- 数据  -->
+<view class='recommend_data'>
+  <view class='recommend_data_big' wx:for="{{prolist}}" wx:key="{{index}}">
+    <view class='data_big_img' bindtap="prodectDetail" data-pid="{{item.id}}">
+      <image src="{{item.photo_x}}"></image>
+    </view>
+    <view class='message_text'>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<!--热销课程  -->
+<view class='recommend'>
+  <view class='recommend_border'></view>
+  <view class='recommend_title'>热销课程</view>
+</view>
+<!--热销课程 -- 数据 -->
+<view class='hot'>
+  <view class='hot_big' wx:for="{{renqi}}" wx:key="{{index}}">
+    <view class='hot_img' bindtap="prodectDetail" data-pid="{{item.id}}">
+      <image src="{{item.photo_x}}"></image>
+    </view>
+    <view >{{item.name}}</view>
+  </view>
+</view>

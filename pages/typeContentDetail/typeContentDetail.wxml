@@ -1,0 +1,11 @@
+
+<view>
+  <view style='text-align:center;font-size:36rpx;font-weight:600;padding:5rpx 10rpx;box-sizing:border-box;'>{{title}}</view>
+  <view style='text-align:right;padding-right:20rpx;font-size:30rpx;color:#999;'>
+    <text>作者：{{author}}</text>
+  </view>
+</view>
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="wxParse" style="padding:12rpx 16rpx;">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
